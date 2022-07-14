@@ -2,7 +2,11 @@
 
 ## Overview
 
-The application saves an image to the device's storage using the [gallery_saver](https://pub.dev/packages/gallery_saver) package for Flutter. The package makes it simple to save images to an Android device. On Android, the photos are saved to the pictures folder inside the Files app. 
+The application saves an image to the device's storage using the [gallery_saver](https://pub.dev/packages/gallery_saver) package for Flutter. The package makes it simple to save images to an Android device.
+
+Below is the directory that the images are saved to on this project: 
+
+![directory](docs/directory.png)
 
 This tutorial uses the example by Johannes Milke linked [here](https://www.youtube.com/watch?v=JILcQLZvjKE). 
 

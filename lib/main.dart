@@ -45,7 +45,7 @@ class _MyHomePageState extends State<MyHomePage> {
               var bodyMap = {
                 'name': 'camera.listFiles',
                 'parameters': {
-                  'fileType': 'image',
+                  'fileType': 'video',
                   'startPosition': 0,
                   'entryCount': 1,
                   'maxThumbSize': 0,
@@ -58,17 +58,14 @@ class _MyHomePageState extends State<MyHomePage> {
               var fileUrl =
                   jsonDecode(response.body)['results']['entries'][0]['fileUrl'];
 
-              final tempDir = await getTemporaryDirectory();
-              final path = '${tempDir.path}/myfile.jpg';
-              await Dio().download(fileUrl, path);
-              await GallerySaver.saveImage(path);
+              await GallerySaver.saveVideo(fileUrl);
             },
             color: Color.fromARGB(255, 126, 183, 228),
             child: Text("camera"),
           ),
           MaterialButton(
             onPressed: () async {
-              String url = 'https://picsum.photos/200/300?grayscale';
+              String url = 'https://picsum.photos/id/237/200/300';
               final tempDir = await getTemporaryDirectory();
               print(tempDir);
               final path = '${tempDir.path}/myfile.jpg';
