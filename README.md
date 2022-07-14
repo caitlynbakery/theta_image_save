@@ -2,7 +2,7 @@
 
 ## Overview
 
-The application saves an image to the device's storage using the [gallery_saver](https://pub.dev/packages/gallery_saver) package for Flutter. The package makes it simple to save images to an Android device. 
+The application saves an image to the device's storage using the [gallery_saver](https://pub.dev/packages/gallery_saver) package for Flutter. The package makes it simple to save images to an Android device. On Android, the photos are saved to the pictures folder inside the Files app. 
 
 This tutorial uses the example by Johannes Milke linked [here](https://www.youtube.com/watch?v=JILcQLZvjKE). 
 
@@ -12,7 +12,7 @@ This tutorial uses the example by Johannes Milke linked [here](https://www.youtu
 
 ### Network Image
 
-First, add the `gallery_saver` package to the project. Save an image url to a `String` variable and get a temporary directory. Pass in the image url to the temporary directory using the `Dio` package. The `GallerySaver` accepts this temporary file and saves it to the device's storage.  
+First, add the `gallery_saver` package to the project. Save an image url to a `String` variable and get a temporary directory. Pass in the image url to the temporary directory using the [dio](https://pub.dev/packages/dio) package. The `GallerySaver` accepts this temporary file and saves it to the device's storage.  
 
 ```dart
    String url = 'https://picsum.photos/200/300?grayscale';
@@ -25,7 +25,7 @@ First, add the `gallery_saver` package to the project. Save an image url to a `S
 
 ### THETA Image
 
-To get the THETA image file, run the `listFiles` command from the THETA API. Setting the `startPosition` to 0 and the `entryCount` to 1 will get the last image taken. 
+To get the THETA image file, run the [listFiles`](https://api.ricoh/docs/theta-web-api-v2.1/commands/camera.list_files/) command from the THETA API. Setting the `startPosition` to 0 and the `entryCount` to 1 will get the last image taken. 
 
 ```dart
   var url = Uri.parse('http://192.168.1.1/osc/commands/execute');
