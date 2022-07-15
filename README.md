@@ -10,7 +10,7 @@ Below is the directory that the images are saved to on this project:
 
 This tutorial uses the example by Johannes Milke linked [here](https://www.youtube.com/watch?v=JILcQLZvjKE). 
 
-![gif](docs/demo.gif)
+<img src="docs/savingapp.png" width=50%>
 
 ## Implementation
 
@@ -26,6 +26,8 @@ First, add the `gallery_saver` package to the project. Save an image url to a `S
               await Dio().download(url, path);
               await GallerySaver.saveImage(path);
 ```
+
+<img src="docs/googlephotos.png" width=50%>
 
 ### THETA Image
 
