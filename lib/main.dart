@@ -34,8 +34,8 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: Center(
-      child: Row(
+        body: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+      Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           MaterialButton(
@@ -88,20 +88,20 @@ class _MyHomePageState extends State<MyHomePage> {
             color: Color.fromARGB(255, 126, 183, 228),
             child: Text("Camera Video"),
           ),
-          MaterialButton(
-            onPressed: () async {
-              String url = 'https://picsum.photos/id/237/200/300';
-              final tempDir = await getTemporaryDirectory();
-              print(tempDir);
-              final path = '${tempDir.path}/myfile.jpg';
-              await Dio().download(url, path);
-              await GallerySaver.saveImage(path);
-            },
-            color: Color.fromARGB(255, 126, 183, 228),
-            child: Text("test"),
-          ),
         ],
       ),
-    ));
+      MaterialButton(
+        onPressed: () async {
+          String url = 'https://picsum.photos/id/237/200/300';
+          final tempDir = await getTemporaryDirectory();
+          final path = '${tempDir.path}/myfile.jpg';
+          print(path);
+          await Dio().download(url, path);
+          await GallerySaver.saveImage(path);
+        },
+        color: Color.fromARGB(255, 126, 183, 228),
+        child: Text("test"),
+      ),
+    ]));
   }
 }
