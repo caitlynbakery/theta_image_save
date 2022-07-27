@@ -31,7 +31,7 @@ First, add the `gallery_saver` package to the project. Save an image url to a `S
 
 ### THETA Image
 
-To get the THETA image file, run the [listFiles`](https://api.ricoh/docs/theta-web-api-v2.1/commands/camera.list_files/) command from the THETA API. Setting the `startPosition` to 0 and the `entryCount` to 1 will get the last image taken. 
+To get the THETA image file, run the [listFiles](https://api.ricoh/docs/theta-web-api-v2.1/commands/camera.list_files/) command from the THETA API. Setting the `startPosition` to 0 and the `entryCount` to 1 will get the last image taken. 
 
 ```dart
   var url = Uri.parse('http://192.168.1.1/osc/commands/execute');
